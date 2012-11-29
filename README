@@ -1,0 +1,14 @@
+swagger requires:
+* Python 2.X
+* GitPython - https://github.com/gitpython-developers/GitPython
+* a git checkout of mozilla-central - https://github.com/mozilla/mozilla-central
+
+The first run will take ~5 minutes and seed a committers.db sqlite3 database with all commit metadata
+from the repository provided on the commandline. Subsequent runs will update the database with data
+from any new commits present in the repository since the last time swagger was run. This will print
+out a list of email addresses corresponding to first commits in this period.
+
+To look at historical data, open up committers.db in sqlite3. Every entry in the committers table
+contains a first_commit and last_commit timestamp, so you can search within date ranges.
+
+Please enjoy responsibly.
