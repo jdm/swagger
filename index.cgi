@@ -39,7 +39,7 @@ if start:
     c = conn.cursor()
     for row in c.execute('SELECT * FROM committers WHERE first_commit >= ? AND first_commit <= ?',
                          (start, end)):
-        print '''<a href="https://bugzilla.mozilla.org/page.cgi?id=user_activity.html&action=run&who=%s&from=2012-02-23&to=2012-03-08&sort=when"><img src="bugzilla.gif"></a>
+        print '''<a href="https://bugzilla.mozilla.org/page.cgi?id=user_activity.html&action=run&who=%s"><img src="bugzilla.gif"></a>
                  <a href="mailto:%s">%s</a> (%s)<br>''' % (row[1], row[1], row[0], row[2])
 
 print '''</body>
