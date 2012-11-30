@@ -5,7 +5,10 @@ import cgitb
 import cgi
 import sys
 import time
-import json
+try
+  import json
+except ImportError:
+  import simplejson as json
 import sqlite3
 from datetime import datetime, timedelta, date, timedelta, time
 cgitb.enable()
