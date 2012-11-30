@@ -5,7 +5,7 @@ import cgitb
 import cgi
 import sys
 import time
-try
+try:
   import json
 except ImportError:
   import simplejson as json
