@@ -5,10 +5,6 @@ import cgitb
 import cgi
 import sys
 import time
-try:
-  import json
-except ImportError:
-  import simplejson as json
 import sqlite3
 from datetime import datetime, timedelta, date, timedelta, time
 cgitb.enable()
@@ -54,5 +50,10 @@ c.close()
 
 print "Content-Type: application/json;charset=utf-8"
 print
-print json.dumps(data)
+print '[',
+for i in xrange(0, len(data)):
+    print data[i],
+    if i < len(data) - 1:
+        print ',',
+print ']'
 
