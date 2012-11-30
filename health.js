@@ -8,6 +8,9 @@ xhr.onload = function() {
 xhr.send();
 
 function createChart(data) {
+  var loading = $('#loading')[0];
+  loading.parentNode.removeChild(loading);
+
   function nextMonth(d) {
     var y = parseInt(d.split('/')[0]);
     var m = parseInt(d.split('/')[1]) + 1;
