@@ -30,7 +30,7 @@ def next_month(d):
 def unix_time(dt):
     epoch = datetime.utcfromtimestamp(0)
     delta = datetime.combine(date=dt, time=time(0,0,0)) - epoch
-    return delta.total_seconds()
+    return (delta.microseconds + (delta.seconds + delta.days * 24 * 3600) * 10**6) / 10**6
 
 start_date = date(int(start.split('-')[0]), int(start.split('-')[1]), 1)
 end_date = next_month(date(int(end.split('-')[0]), int(end.split('-')[1]), 1))
