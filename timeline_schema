@@ -1,0 +1,13 @@
+users
+-----
+uid
+email
+name
+
+activity
+--------
+aid
+uid
+type
+when
+amount
